@@ -71,7 +71,7 @@ func TestCountdown_Do(t *testing.T) {
 func TestCountdown_Remaining(t *testing.T) {
 	c := For(3*time.Millisecond, time.Millisecond)
 
-	assert.Equal(t, 0, c.Remaining(),
+	assert.Equal(t, time.Nanosecond*0, c.Remaining(),
 		"returns zero when not running")
 
 	c.Do(func(c *Countdown) error {
